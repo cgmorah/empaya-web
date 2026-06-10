@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "build:static": "next build",
-    "start": "next start"
+    "start": "npx serve@latest out"
   },
   "dependencies": {
     "next": "16.2.9",
