@@ -16,6 +16,11 @@ concurrency:
 jobs:
   build-and-publish:
     runs-on: ubuntu-latest
+    env:
+      CLOUDWAYS_HOST: ${{ secrets.CLOUDWAYS_HOST }}
+      CLOUDWAYS_USER: ${{ secrets.CLOUDWAYS_USER }}
+      CLOUDWAYS_SSH_PRIVATE_KEY: ${{ secrets.CLOUDWAYS_SSH_PRIVATE_KEY }}
+      CLOUDWAYS_PATH: ${{ secrets.CLOUDWAYS_PATH }}
 
     steps:
       - name: Checkout source
@@ -44,3 +49,14 @@ jobs:
           user_email: 41898282+github-actions[bot]@users.noreply.github.com
           commit_message: "Deploy static EmpaYa export"
 
+      - name: Deploy directly to Cloudways
+        if: ${{ env.CLOUDWAYS_HOST != '' && env.CLOUDWAYS_USER != '' && env.CLOUDWAYS_SSH_PRIVATE_KEY != '' && env.CLOUDWAYS_PATH != '' }}
+        run: |
+          mkdir -p ~/.ssh
+          printf '%s\n' "$CLOUDWAYS_SSH_PRIVATE_KEY" > ~/.ssh/cloudways_key
+          chmod 600 ~/.ssh/cloudways_key
+          ssh-keyscan -H "$CLOUDWAYS_HOST" >> ~/.ssh/known_hosts
+          rsync -az --delete \
+            --exclude='.git' \
+            -e "ssh -i ~/.ssh/cloudways_key" \
+            out/ "$CLOUDWAYS_USER@$CLOUDWAYS_HOST:$CLOUDWAYS_PATH/"
