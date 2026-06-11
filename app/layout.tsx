@@ -58,9 +58,10 @@ const schemaOrg = {
     "Empanadas colombianas frescas y congeladas en Bogotá. Receta familiar de 35 años.",
   url: "https://empaya.co",
   image: "https://empaya.co/og-image.jpg",
-  telephone: "+57-XXX-XXX-XXXX",
+  telephone: "+57-315-165-0333",
   address: {
     "@type": "PostalAddress",
+    streetAddress: "Calle 14 A Sur # 19-46, Local 1, Restrepo",
     addressLocality: "Bogotá",
     addressRegion: "Cundinamarca",
     addressCountry: "CO",
@@ -68,15 +69,9 @@ const schemaOrg = {
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
       opens: "08:00",
-      closes: "19:00",
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: "Sunday",
-      opens: "09:00",
-      closes: "16:00",
+      closes: "18:00",
     },
   ],
   servesCuisine: "Colombian",

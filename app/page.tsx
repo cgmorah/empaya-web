@@ -1,13 +1,13 @@
 import { ClientInit } from "@/components/ClientInit";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
-import { TrustStrip } from "@/components/TrustStrip";
 import { Menu } from "@/components/Menu";
-import { Historia } from "@/components/Historia";
-import { VideoSection } from "@/components/VideoSection";
-import { Encuesta } from "@/components/Encuesta";
-import { Resenas } from "@/components/Resenas";
-import { Encuentranos } from "@/components/Encuentranos";
+import { Packs } from "@/components/Packs";
+import { Receta } from "@/components/Receta";
+import { CtaBanner } from "@/components/CtaBanner";
+import { Pedido } from "@/components/Pedido";
+import { Opiniones } from "@/components/Opiniones";
+import { Ubicacion } from "@/components/Ubicacion";
 import { Footer } from "@/components/Footer";
 
 export default function Home() {
@@ -17,13 +17,13 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
-        <TrustStrip />
         <Menu />
-        <Historia />
-        <VideoSection />
-        <Encuesta />
-        <Resenas />
-        <Encuentranos />
+        <Packs />
+        <Receta />
+        <CtaBanner />
+        <Pedido />
+        <Opiniones />
+        <Ubicacion />
       </main>
       <Footer />
     </>
