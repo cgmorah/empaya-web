@@ -47,7 +47,12 @@ export function Footer() {
 
         <div className="footer-bottom">
           <span>© 2026 EmpaYá Empanadas. Todos los derechos reservados.</span>
-          <span>Hecho en Bogotá con 🧡</span>
+          <span>
+            Hecho en Australia con 🧡 por{" "}
+            <a href="https://whuws.com/" target="_blank" rel="noopener noreferrer">
+              WHUWS
+            </a>
+          </span>
         </div>
       </div>
     </footer>
