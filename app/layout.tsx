@@ -25,28 +25,71 @@ const fraunces = Fraunces({
 });
 
 export const metadata: Metadata = {
-  title: "EmpaYá | Empanadas Colombianas Artesanales en Bogotá",
+  metadataBase: new URL("https://empaya.co"),
+  title: {
+    default: "EmpaYá | Empanadas Colombianas Artesanales en Bogotá",
+    template: "%s | EmpaYá",
+  },
   description:
-    "Empanadas frescas y congeladas hechas con receta familiar de 35 años. Sin atajos, sin conservantes.",
-  keywords:
-    "empanadas Bogotá, empanadas colombianas, empanadas congeladas, empanadas a domicilio, comida colombiana Bogotá",
+    "Empanadas colombianas frescas y congeladas hechas con receta familiar de 35 años. Sin atajos, sin conservantes. Pide por WhatsApp en Restrepo, Bogotá.",
+  applicationName: "EmpaYá",
   authors: [{ name: "EmpaYá" }],
+  creator: "EmpaYá",
+  publisher: "EmpaYá",
+  category: "food",
+  keywords: [
+    "empanadas Bogotá",
+    "empanadas colombianas",
+    "empanadas congeladas",
+    "empanadas a domicilio",
+    "empanadas artesanales",
+    "empanadas Restrepo",
+    "comida colombiana Bogotá",
+    "EmpaYá",
+  ],
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   openGraph: {
     type: "website",
     siteName: "EmpaYá",
-    title: "EmpaYá · Empanadas Colombianas en Bogotá",
-    description: "Frescas o congeladas. Receta familiar de 35 años.",
+    title: "EmpaYá · Empanadas Colombianas Artesanales en Bogotá",
+    description:
+      "Frescas o congeladas, con receta familiar de 35 años. Pídelas por WhatsApp en Restrepo, Bogotá.",
     locale: "es_CO",
     url: "https://empaya.co/",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "EmpaYá — Empanadas colombianas artesanales, desde 1990",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "EmpaYá · Empanadas Colombianas en Bogotá",
-    description: "Frescas o congeladas. Receta familiar de 35 años.",
+    title: "EmpaYá · Empanadas Colombianas Artesanales en Bogotá",
+    description:
+      "Frescas o congeladas, con receta familiar de 35 años. Pídelas por WhatsApp en Restrepo, Bogotá.",
+    images: ["/og-image.jpg"],
   },
   other: {
     "geo.region": "CO-DC",
     "geo.placename": "Bogotá",
+    "geo.position": "4.5712;-74.0975",
+    ICBM: "4.5712, -74.0975",
   },
 };
 
@@ -58,13 +101,21 @@ const schemaOrg = {
     "Empanadas colombianas frescas y congeladas en Bogotá. Receta familiar de 35 años.",
   url: "https://empaya.co",
   image: "https://empaya.co/og-image.jpg",
+  logo: "https://empaya.co/logo-badge.webp",
   telephone: "+57-315-165-0333",
+  foundingDate: "1990",
   address: {
     "@type": "PostalAddress",
     streetAddress: "Calle 14 A Sur # 19-46, Local 1, Restrepo",
     addressLocality: "Bogotá",
     addressRegion: "Cundinamarca",
+    postalCode: "111611",
     addressCountry: "CO",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 4.5712,
+    longitude: -74.0975,
   },
   openingHoursSpecification: [
     {
@@ -78,6 +129,7 @@ const schemaOrg = {
   priceRange: "$",
   hasMenu: "https://empaya.co/#menu",
   acceptsReservations: false,
+  sameAs: ["https://www.instagram.com/empaya.oficial/"],
 };
 
 export default function RootLayout({

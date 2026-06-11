@@ -870,8 +870,9 @@ textarea.field { resize: vertical; min-height: 96px; }
 .footer-brand { display: flex; flex-direction: column; gap: 16px; }
 .footer-logo-img {
   width: auto;
-  height: 60px;
+  height: 86px;
   object-fit: contain;
+  align-self: flex-start;
 }
 .footer-tag { color: var(--muted); font-size: 0.92rem; max-width: 34ch; margin: 0; }
 .footer-cols { display: flex; gap: 56px; }

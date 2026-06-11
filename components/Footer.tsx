@@ -7,7 +7,7 @@ export function Footer() {
       <div className="wrap">
         <div className="footer-top">
           <div className="footer-brand">
-            <Image src="/logo.webp" alt="EmpaYá" width={186} height={62} className="footer-logo-img" />
+            <Image src="/logo.webp" alt="EmpaYá" width={264} height={88} className="footer-logo-img" />
             <p className="footer-tag">
               Empanadas artesanales hechas con amor, tradición y los mejores ingredientes.
             </p>
