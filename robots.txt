@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+
+Host: https://empaya.co
+Sitemap: https://empaya.co/sitemap.xml
